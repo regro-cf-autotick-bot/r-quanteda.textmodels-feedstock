@@ -1,4 +1,4 @@
-{% set version = '0.9.4' %}
+{% set version = "0.9.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/quanteda.textmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/quanteda.textmodels/quanteda.textmodels_{{ version }}.tar.gz
-  sha256: 30c06c405ef15c6424a6ba6c184ec97230b496b0b7d60cfe493c663b92a65664
+  sha256: e57a091e63f013f875fc18a99ef26ef208914218a20eff3578339719a73f25a9
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -35,7 +35,7 @@ requirements:
     - libblas
     - libcblas
     - liblapack
-    - liblapacke    
+    - liblapacke
     - r-base
     - r-liblinear
     - r-matrix >=1.2
@@ -70,16 +70,11 @@ about:
   home: https://github.com/quanteda/quanteda.textmodels
 
   license: GPL-3.0-only
-  summary: Scaling models and classifiers for sparse matrix objects representing textual data
-    in the form of a document-feature matrix.  Includes original implementations of
-    'Laver', 'Benoit', and Garry's (2003) <doi:10.1017/S0003055403000698>, 'Wordscores'
-    model, Perry and 'Benoit's' (2017) <arXiv:1710.08963> class affinity scaling model,
-    and 'Slapin' and 'Proksch's' (2008) <doi:10.1111/j.1540-5907.2008.00338.x> 'wordfish'
-    model, as well as methods for correspondence analysis, latent semantic analysis,
-    and fast Naive Bayes and linear 'SVMs' specially designed for sparse textual data.
+  summary: Scaling models and classifiers for sparse matrix objects representing textual data in the form of a document-feature matrix.  Includes original implementations of 'Laver', 'Benoit', and Garry's (2003) <doi:10.1017/S0003055403000698>, 'Wordscores' model, Perry and 'Benoit's' (2017) <arXiv:1710.08963> class affinity
+    scaling model, and 'Slapin' and 'Proksch's' (2008) <doi:10.1111/j.1540-5907.2008.00338.x> 'wordfish' model, as well as methods for correspondence analysis, latent semantic analysis, and fast Naive Bayes and linear 'SVMs' specially designed for sparse textual data.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
