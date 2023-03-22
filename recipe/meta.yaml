@@ -1,4 +1,4 @@
-{% set version = "0.9.5-1" %}
+{% set version = "0.9.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/quanteda.textmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/quanteda.textmodels/quanteda.textmodels_{{ version }}.tar.gz
-  sha256: c144312a0895453f74280709d5ab8f3d37c1c454f6b2bab3c63d6f68a65dc144
+  sha256: a16b9258ca2fdd1c48d4a5ef71e5faa339b048f5bdc6fc745d8aa16fd1f71aea
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
